@@ -1,0 +1,17 @@
+stages:
+  train:
+    cmd: python "pet classification.py"
+    deps:
+    - ds
+    - params.yaml
+
+params:
+- params.yaml
+artifacts:
+  model:
+    path: model.keras
+    type: model
+    desc: model
+plots:
+- dvclive/plots/metrics:
+    x: step
