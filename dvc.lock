@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python "pet classification.py"
+    deps:
+    - path: ds
+      hash: md5
+      md5: 3c32695f310a97ef15ed2bb5f8ae153d.dir
+      size: 228599829
+      nfiles: 9999
+    - path: params.yaml
+      hash: md5
+      md5: 5791c6499c4437ff087d69589560243c
+      size: 129
