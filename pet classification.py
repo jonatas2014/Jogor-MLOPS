@@ -1,8 +1,11 @@
 
 # from dvclive.keras import DvcLiveCallback
 from tensorflow.keras import layers, Sequential, optimizers
+from dvclive import Live
+from dvclive.keras import DVCLiveCallback
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import pathlib
+from dvc.api import params_show
 
 
 
@@ -106,6 +109,13 @@ def main():
     }
 
     Training(params).build_model().train().save_model()
+
+
+def main():
+    params = params_show()
+
+    with Live() as dvclive:
+        Training(dvclive, params).build_model().train().save_model()
 
 
 if __name__ == '__main__':
